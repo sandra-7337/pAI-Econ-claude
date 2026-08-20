@@ -137,10 +137,14 @@ git clone https://github.com/maxwell2732/pAI-Econ-claude.git
 cd pAI-Econ-claude
 ```
 
-在该目录下打开 Claude Code，slash command 即自动可用：
+在该目录下可使用以下任一入口：
 
 ```text
+# Claude Code
 /theoretical-economics-claude-skill "你的理论经济学研究想法"
+
+# Codex
+$theoretical-economics-claude-skill 你的理论经济学研究想法
 ```
 
 ---
@@ -663,7 +667,8 @@ Stage 8 专门寻找反例和边界情形，包括：
 ```text
 pAI-Econ-claude/
 ├── SKILL.md                              # 流水线编排：阶段路由、Gate 逻辑、HiL 协议
-├── CLAUDE.md                             # 项目级规则（文献验证要求、PDF 格式标准等）
+├── CLAUDE.md                             # 双平台共享规则的规范源（保留历史文件名）
+├── AGENTS.md                             # Codex 项目规则入口
 ├── README.md                             # 中文说明（本文件）
 ├── README_EN.md                          # 英文说明
 ├── THEORETICAL_ECON_MIGRATION_PLAN.md    # 从 pAI/MSc 迁移的设计记录
@@ -671,6 +676,9 @@ pAI-Econ-claude/
 ├── .claude/
 │   └── commands/
 │       └── theoretical-economics-claude-skill.md  # slash command 入口
+├── .agents/
+│   └── skills/theoretical-economics-claude-skill/
+│       └── SKILL.md                      # Codex Skill 入口
 ├── model_library/                        # 理论经济学典范模型库（仅结构模型）
 │   ├── consumer-choice.md
 │   ├── indirect-utility-expenditure-minimization.md

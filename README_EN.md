@@ -140,10 +140,14 @@ git clone https://github.com/maxwell2732/pAI-Econ-claude.git
 cd pAI-Econ-claude
 ```
 
-Open Claude Code in that directory — the slash command is immediately available:
+Use either host-specific entry point from that directory:
 
 ```text
+# Claude Code
 /theoretical-economics-claude-skill "Your theoretical economics research idea"
+
+# Codex
+$theoretical-economics-claude-skill Your theoretical economics research idea
 ```
 
 ---
@@ -662,7 +666,8 @@ The goal of this step is not to make the model look better, but to find early wh
 ```text
 pAI-Econ-claude/
 ├── SKILL.md                              # Pipeline orchestration: stage routing, Gate logic, HiL protocol
-├── CLAUDE.md                             # Project-level rules (citation verification, PDF style standards)
+├── CLAUDE.md                             # Canonical shared rules (historical filename retained)
+├── AGENTS.md                             # Codex project-guidance entry point
 ├── README.md                             # Chinese documentation
 ├── README_EN.md                          # English documentation (this file)
 ├── THEORETICAL_ECON_MIGRATION_PLAN.md    # Design record for migration from pAI/MSc
@@ -670,6 +675,9 @@ pAI-Econ-claude/
 ├── .claude/
 │   └── commands/
 │       └── theoretical-economics-claude-skill.md  # Slash command entry point
+├── .agents/
+│   └── skills/theoretical-economics-claude-skill/
+│       └── SKILL.md                      # Codex skill entry point
 ├── model_library/                        # Canonical theoretical economics model library (structural models only)
 │   ├── consumer-choice.md
 │   ├── indirect-utility-expenditure-minimization.md
