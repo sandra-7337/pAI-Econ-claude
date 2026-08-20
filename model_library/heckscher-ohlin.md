@@ -1,132 +1,128 @@
 # Heckscher-Ohlin Model
 
 ## Model Family Name
-Heckscher-Ohlin Factor Endowment Model (Heckscher 1919; Ohlin 1933; Samuelson 1948, 1949)
-Including: Stolper-Samuelson Theorem, Rybczynski Theorem, Factor Price Equalization
+Factor-Endowment Trade with Stolper-Samuelson, Rybczynski, and Factor-Price Equalization
 
 ## Canonical Economic Question
-When countries differ in their endowments of capital and labor (rather than technology), which goods will each country export, and how does trade liberalization affect the distribution of income between capital and labor within each country?
+How do cross-country differences in factor endowments determine trade patterns, production, and the distribution of real income across factors?
+
+## Verified References
+- Heckscher, Eli F. 1919. “The Effect of Foreign Trade on the Distribution of Income.” *Ekonomisk Tidskrift*; English translation in *Readings in the Theory of International Trade* (1949), 272-300. [ZBW catalog record](https://www.econbiz.de/10003573813).
+- Ohlin, Bertil. 1933. *Interregional and International Trade*. Cambridge, MA: Harvard University Press. [Bibliographic record](https://books.google.com/books/about/Interregional_and_International_Trade.html?id=k60LAQAAIAAJ).
+- Stolper, Wolfgang F., and Paul A. Samuelson. 1941. “Protection and Real Wages.” *Review of Economic Studies* 9(1): 58-73. [DOI](https://doi.org/10.2307/2967638).
 
 ## When to Use This Model
-- When the question concerns factor endowments (capital, skilled vs. unskilled labor, land) as the source of comparative advantage
-- When analyzing the distributional consequences of trade liberalization — who gains and who loses within a country
-- When the research involves the Stolper-Samuelson effect: trade policy affecting real factor returns
-- When studying the relationship between capital-labor ratios, factor intensities, and trade patterns
-- When explaining why capital-abundant countries export capital-intensive goods and import labor-intensive goods
+- Use it when relative factor abundance and sectoral factor intensity drive comparative advantage.
+- Use it for real factor-return and distributional effects of goods-price or trade-policy changes.
+- Use it to distinguish output responses to endowment changes from price responses to trade shocks.
 
 ## Typical Primitives
-**2×2×2 HO model (two countries, two goods, two factors):**
-- Two countries: Home (H, capital-abundant: KH/LH > KF/LF) and Foreign (F, labor-abundant)
-- Two goods: good 1 (capital-intensive: K/L ratio in good 1 > K/L ratio in good 2) and good 2 (labor-intensive)
-- Two factors: capital K (return r) and labor L (wage w); both factors mobile across sectors within a country, immobile across countries
-- Production functions: Fᵢ(Kᵢ, Lᵢ) with constant returns to scale; factor intensity ordering preserved: k₁(w/r) > k₂(w/r) for all w/r (no factor intensity reversal)
-- Identical technology across countries; identical homothetic preferences
+- Two countries, two goods, and two factors (capital K and labor L) in the canonical 2×2×2 model.
+- Identical constant-returns technologies across countries and homothetic preferences.
+- Sectoral unit-cost functions (c_j(w,r)) and no factor-intensity reversal.
+- Factors mobile across domestic sectors and immobile internationally.
 
 ## Timing
-Static general equilibrium — no dynamic elements. Equilibrium simultaneously determines:
-1. Factor prices (w, r) in each country
-2. Output of each good in each country
-3. Trade flows consistent with goods and factor market clearing
+Static. Firms choose cost-minimizing factor inputs; goods and factor prices and outputs solve simultaneously; trade clears world goods markets.
 
 ## Information Structure
-- Full information: all agents observe factor prices and goods prices
-- Competitive markets: no market power; firms are price-takers in factor and goods markets
+Complete information and competitive price taking. There is no uncertainty or strategic interaction.
 
 ## Agent Heterogeneity
-- Countries differ in factor endowments (K/L ratio), not technology
-- Within each country: no heterogeneity (representative firm in each sector, representative consumer)
-- Across countries: identical technology and preferences by assumption — endowments drive all differences
+Countries differ in relative factor endowments; sectors differ in factor intensity; factor owners differ by ownership of capital or labor.
 
 ## Choice Variables
-- Firms: capital-labor ratio kᵢ(w/r) to minimize cost; output determined by market clearing
-- Consumers: demand for each good given income and prices
-- Factor owners: supply factors inelastically
+- Firms choose factor intensities and output.
+- Households choose consumption.
+- Goods prices, factor returns, production, and trade are equilibrium outcomes.
 
 ## Constraints
-- Factor market clearing: K₁ + K₂ = K, L₁ + L₂ = L (for each country)
-- Goods market clearing: world supply = world demand for each good
-- Zero profit: competitive markets; pᵢ = unit cost cᵢ(w, r)
-- No factor intensity reversal: k₁(w/r) > k₂(w/r) for all w/r
+- Full employment: (\sum_jK_j=K) and (\sum_jL_j=L).
+- Zero profit in active sectors: (p_j=c_j(w,r)).
+- Goods-market clearing and trade balance.
+- No factor-intensity reversal for the clean 2×2 theorems.
 
 ## Equilibrium Concept or Solution Concept
-- **Competitive equilibrium:** goods prices determined by world demand and supply; factor prices determined by zero-profit conditions; production by factor market clearing
-- **Factor Price Equalization (FPE):** under free trade with identical technology, factor prices equalize across countries — both countries reach the same (w, r) if endowments are in the same "cone of diversification"
-- **Pattern of trade:** H exports good 1 (capital-intensive) and imports good 2 (labor-intensive)
+A competitive general equilibrium. Zero-profit conditions map goods prices into factor prices; full-employment conditions map endowments into outputs. Diversified countries inside the same cone can share factor prices.
+
+## Key Equations
+For active sectors,
+
+\[
+p_1=c_1(w,r),\qquad p_2=c_2(w,r).
+\]
+
+Cost-minimizing factor demands satisfy
+
+\[
+L_j=y_j\frac{\partial c_j(w,r)}{\partial w},
+\qquad
+K_j=y_j\frac{\partial c_j(w,r)}{\partial r}.
+\]
+
+Full employment gives
+
+\[
+\begin{bmatrix}
+a_{L1}&a_{L2}\\
+a_{K1}&a_{K2}
+\end{bmatrix}
+\begin{bmatrix}y_1\\y_2\end{bmatrix}
+=
+\begin{bmatrix}L\\K\end{bmatrix}.
+\]
 
 ## Main Mechanism
-
-**Heckscher-Ohlin Theorem:** Capital-abundant countries have a relative cost advantage in capital-intensive goods (lower r/w ratio → lower relative cost of capital-intensive production). This translates into comparative advantage: H exports good 1, F exports good 2. Unlike Ricardian, the source of comparative advantage is endowments, not technology.
-
-**Stolper-Samuelson Theorem:** A rise in the relative price of a good raises the real return to the factor used intensively in that good and lowers the real return to the other factor. Specifically, if p₁ rises (price of capital-intensive good), then r rises and w falls — in real terms, not just nominal. This is the magnification effect: factor price changes are magnified relative to goods price changes.
-
-**Rybczynski Theorem:** At constant goods prices, an increase in the endowment of one factor causes a more than proportional increase in the output of the good intensive in that factor and an absolute decrease in output of the other good. This is the output magnification effect: a 10% increase in K causes capital-intensive output to rise by more than 10% and labor-intensive output to fall.
-
-**Factor Price Equalization:** Because countries share the same technology, free trade in goods is a substitute for factor mobility — trade equalizes factor prices even without migration or capital flows. FPE holds exactly in the 2×2 model within the cone of diversification; fails when endowments are too different (countries specialize completely).
+An abundant factor is relatively cheap, lowering the relative unit cost of the good that uses it intensively. Trade raises the relative price of that export good, which feeds back into real factor returns through zero profit and into output through full employment.
 
 ## Common Propositions
-- **HO Theorem:** The capital-abundant country exports the capital-intensive good
-- **Stolper-Samuelson (1941):** A rise in p₁ (capital-intensive good's price) → r rises, w falls (in real terms); each factor's real return moves in the same direction as the price of the good it is intensively used in
-- **Rybczynski (1955):** At constant prices, K ↑ → output of capital-intensive good rises more than proportionally; output of labor-intensive good falls absolutely
-- **Factor Price Equalization (Samuelson 1948):** Free trade → w and r equalize across countries (within cone of diversification)
-- **Magnification effects (Jones 1965):** Percentage changes in factor prices are larger in magnitude than percentage changes in goods prices — trade policy has amplified distributional consequences
+- Heckscher-Ohlin: a factor-abundant country exports the good intensive in that factor under the theorem’s assumptions.
+- Stolper-Samuelson: a rise in a good’s relative price raises the real return of its intensive factor and lowers the other factor’s real return.
+- Rybczynski: at fixed goods prices, an increase in a factor endowment expands the output of its intensive good and contracts the other good.
+- Factor-price equalization requires common technology, diversification, and common goods prices.
 
 ## Comparative Statics Usually Available
-- Trade liberalization (p₁ ↑ in H) → r ↑, w ↓ in H; w ↑, r ↓ in F (Stolper-Samuelson)
-- Immigration of labor (L ↑ in H, constant prices) → labor-intensive output ↑, capital-intensive output ↓ (Rybczynski)
-- Capital accumulation (K ↑) → at constant prices, capital-intensive output expands, labor-intensive output contracts
-- Trade costs reduce: → countries move closer to FPE; factor prices converge
-- Factor intensity reversal: → HO theorem may fail; multiple equilibria possible
+- Trade-induced goods-price changes map into magnified factor-price changes in the 2×2 diversified cone.
+- Capital accumulation expands capital-intensive output at fixed prices.
+- A labor endowment increase expands labor-intensive output at fixed prices.
+- Complete specialization breaks the clean factor-price-equalization result.
+
+## Data Requirements
+- Sectoral factor inputs, factor payments, output, prices, and bilateral or net trade.
+- Country factor endowments and sector factor intensities.
+- Tariffs or other price shifters for causal tests of Stolper-Samuelson mechanisms.
+
+## Estimation or Calibration
+Calibrate unit input coefficients or production functions and recover factor abundance consistently across countries. Factor-content tests require compatible input-output and endowment data. Causal incidence needs exogenous goods-price or policy variation, not simple wage-trade correlations.
+
+## Counterfactual Analysis
+Change endowments, tariffs, or world goods prices; solve zero-profit and full-employment equations; check whether countries remain diversified. If a cone boundary is crossed, allow specialization and re-solve piecewise.
 
 ## Welfare Implications
-- **Aggregate gains from trade:** Both countries gain on average (as in all competitive trade models)
-- **Within-country distributional effects:** Trade liberalization creates winners and losers within a country — owners of the abundant factor gain, owners of the scarce factor lose (Stolper-Samuelson)
-- **Political economy of trade:** Scarce factor owners have incentive to lobby for protection; abundant factor owners favor liberalization — this generates the political economy of trade policy
-- **FPE and convergence:** Trade can substitute for migration; poor countries' wages converge toward rich countries' wages as trade expands (within the cone)
+Aggregate gains from trade can coexist with losses for owners of the scarce factor. Stolper-Samuelson is a local 2×2 result and does not guarantee a one-to-one winner/loser mapping with many goods, factors, nontraded goods, or mobility frictions.
+
+## Welfare Decomposition
+Decompose aggregate real-income change into terms of trade and production efficiency, then allocate income changes across factor owners. Compensation is not automatic; potential Pareto gains differ from actual household welfare.
 
 ## Common Modeling Pitfalls
-- Ignoring the cone of diversification — FPE applies only when endowments are sufficiently similar; when countries specialize completely, FPE fails and factor prices diverge
-- Applying Stolper-Samuelson in a many-factor or many-good setting — the theorem generalizes in a weak form but loses its clean "one factor gains, one loses" prediction
-- Treating capital as homogeneous — in practice, skill-biased technology means human capital and physical capital have different distributional implications
-- Conflating the HO theorem (pattern of trade) with Stolper-Samuelson (distributional effect) — they are separate theorems; one can hold even if the other fails
+- Conflating the HO trade-pattern theorem with Stolper-Samuelson incidence.
+- Ignoring diversification cones and specialization.
+- Assuming identical technologies when measured productivity differs.
+- Applying the 2×2 sign theorem mechanically in a many-factor economy.
 
 ## How to Extend the Model
-- **Specific factors model (Ricardo-Viner):** Capital is sector-specific in the short run; only labor moves across sectors; distributional effects are more muted than Stolper-Samuelson but still present
-- **Multi-factor HO (Vanek 1968):** Many factors, many goods; factor content of trade theorem — net exports embody net endowment differences; HOV theorem
-- **Skill-biased technical change (SBTC):** Technology is not identical across countries; skilled-labor-intensive technology raises returns to skill; connects HO endowments to within-country inequality
-- **North-South model:** One country (North) is skill-abundant and technology-advanced; trade liberalization raises skilled wages in North and unskilled wages in South (HO prediction), but technology transfer complicates the picture
-- **New-New Trade Theory:** Combine HO sector-level comparative advantage with Melitz firm heterogeneity within sectors
+- Heckscher-Ohlin-Vanek factor content with many goods and factors.
+- Specific factors for short-run immobility.
+- Firm heterogeneity within comparative-advantage sectors.
+- Skill-biased technology and nonhomothetic demand.
 
 ## Example Research Questions This Model Can Support
-- Does trade liberalization between skill-abundant and unskilled-labor-abundant countries raise wage inequality in both countries (Stolper-Samuelson) or only in the skill-abundant one?
-- Does immigration of low-skilled workers (labor endowment shock) expand low-skill-intensive industries and contract high-skill-intensive industries in the receiving country (Rybczynski)?
-- Can the factor content of trade explain the observed changes in US manufacturing employment since the 1990s?
-- Does China's growing capital endowment predict a shift in its exports from labor-intensive to capital-intensive goods over time?
-- How does trade protection in the form of tariffs on labor-intensive imports affect the real wage of low-skilled workers in a capital-abundant country (Stolper-Samuelson)?
+- Does a tariff-induced goods-price change benefit the factor used intensively in that sector?
+- How does capital accumulation shift a country’s export composition?
+- Are observed factor contents of trade consistent with measured endowment differences?
 
 ## Closely Related Model Families
-- **Comparative Advantage / Ricardian** (Ricardian: technology differences drive comparative advantage; HO: endowment differences drive it)
-- **Directed Technical Change / SBTC** (in human_capital_and_labor/: technology-endowment interaction in wage inequality)
-- **General Equilibrium** (HO is a 2-country 2-sector competitive GE model)
-- **Political Economy** (Stolper-Samuelson generates factor-based trade policy preferences — foundation of political economy of trade)
-- **Occupational Choice / Roy Model** (within-country, workers sort into sectors by comparative advantage — analogous to countries in HO)
+Ricardian trade; specific-factors trade; Melitz with comparative advantage; trade and labor adjustment.
 
 ## When This Model Is Not Appropriate
-- When technology differences across countries are the primary source of comparative advantage (use Ricardian / Eaton-Kortum)
-- When increasing returns and product differentiation are central (use Krugman New Trade Theory)
-- When firm-level heterogeneity in productivity drives trade patterns (use Melitz)
-- When within-sector variation in factor intensity is large (HO assumes each good has a well-defined factor intensity; in practice, sectors are heterogeneous)
-
-## Empirical Paper Caution
-
-**Well-suited for empirical papers studying the distributional effects of trade**, especially Stolper-Samuelson mechanisms. The HOV factor content approach is more demanding.
-
-Two failure modes observed in practice:
-1. **Leontief paradox without resolution:** Empirical tests of the HO theorem often fail (e.g., US exports are labor-intensive — Leontief 1953). Applying HO without addressing the paradox (human capital, multi-factor extensions, technology differences) produces a theoretically motivated prediction that is empirically rejected.
-2. **Attributing all wage changes to Stolper-Samuelson without controlling for SBTC:** Skill-biased technical change and trade liberalization both raise the skill premium. Identifying the HO/Stolper-Samuelson channel requires separating trade-induced from technology-induced wage changes.
-
-**When HO models are well-suited for empirical papers:**
-- The paper uses factor content of trade (HOV) to decompose net exports into implied factor endowment differences
-- The paper exploits variation in trade policy (tariff changes) and tests whether factor prices respond in the Stolper-Samuelson direction — higher wages for abundant factor workers in liberalizing sectors
-- The paper studies a Rybczynski-type prediction: an immigration shock (labor supply increase) reallocates production toward labor-intensive sectors at the regional level
-
-**AI execution risk:** AI may conflate Ricardian and HO comparative advantage. Require the model to state clearly whether the driving force is technology differences (Ricardian) or endowment differences (HO) and specify which theorem (HO, Stolper-Samuelson, Rybczynski, FPE) the empirical test is designed to evaluate.
+Do not use the canonical model when technology differences, firm selection, increasing returns, input networks, or short-run sector-specific adjustment dominate endowment-driven comparative advantage.

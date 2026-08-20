@@ -430,12 +430,39 @@ pAI-Econ-claude 内置一个 `model_library/`，用于在建模前先匹配经�
 
 ### 国际贸易专题库
 
-| 模型家族 | 适用问题 |
-|---|---|
-| Comparative Advantage / Ricardian | 比较优势、贸易专业化分工、技术差异驱动贸易 |
-| Heckscher-Ohlin | 要素禀赋与贸易模式、Stolper-Samuelson、Rybczynski、要素价格均等化 |
-| New Trade Theory / Krugman (1980) | 产业内贸易、规模经济、品种效应、本土市场效应 |
-| Melitz (2003) — Firm Heterogeneity | 企业异质性、出口门槛、选择效应、贸易的生产率重配置收益 |
+完整路由索引见 [`model_library/international_trade/INDEX.md`](model_library/international_trade/INDEX.md)。专题库包含 25 张专题卡，并保留 6 张根目录贸易卡用于兼容和交叉引用。
+
+当研究涉及国际贸易、贸易政策、关税、全球价值链、供应链、企业间贸易、买卖双方匹配、生产网络、动态调整、空间贸易或贸易相关福利分析时，Stage 3b 必须递归扫描该专题目录，同时检查通用的 Search、Matching、Dynamic Optimization 和 General Equilibrium 模型；基准模型与扩展模型须共同说明机制、数据需求和福利分析路径。
+
+| 分组 | 模型卡 | 适用问题 |
+|---|---|---|
+| 基础与定量贸易 | [Eaton–Kortum](model_library/international_trade/eaton-kortum-ricardian-gravity.md) | 多国李嘉图贸易、技术差异、贸易成本与引力 |
+|  | [Armington / Structural Gravity](model_library/international_trade/armington-structural-gravity.md) | 来源国差异化、多边阻力与结构引力 |
+|  | [ACR Welfare](model_library/international_trade/acr-welfare-sufficient-statistics.md) | 国内支出份额、贸易弹性与充分统计量福利公式 |
+|  | [Caliendo–Parro](model_library/international_trade/caliendo-parro-multisector-trade.md) | 多部门投入产出贸易、关税传播与反事实 |
+|  | [Quantitative Trade Counterfactuals](model_library/international_trade/quantitative-trade-counterfactuals.md) | exact-hat algebra 与定量反事实实施 |
+| 企业、采购与全球价值链 | [EKK Firm-to-Firm Trade](model_library/international_trade/ekk-firm-to-firm-trade.md) | 进口商—出口商匹配及企业和劳动力市场效应 |
+|  | [Multiproduct Firms](model_library/international_trade/multiproduct-firms-trade.md) | 产品范围、核心能力与贸易自由化 |
+|  | [Antràs–Helpman Global Sourcing](model_library/international_trade/antras-helpman-global-sourcing.md) | 异质性企业、组织边界与不完全合同 |
+|  | [Grossman–Helpman Outsourcing](model_library/international_trade/grossman-helpman-outsourcing.md) | 搜寻、匹配以及一体化与外包选择 |
+|  | [Antràs–Chor Global Value Chains](model_library/international_trade/antras-chor-global-value-chains.md) | 序贯生产、契约性与生产阶段配置 |
+| 生产网络与供应链 | [Input-Output Production Networks](model_library/international_trade/input-output-production-networks.md) | 固定投入产出网络和冲击传播 |
+|  | [Acemoglu–Azar Endogenous Networks](model_library/international_trade/acemoglu-azar-endogenous-production-networks.md) | 内生供应商集合与部门网络调整 |
+|  | [Oberfield Input-Output Architecture](model_library/international_trade/oberfield-input-output-architecture.md) | 企业供应商选择与内生产业结构 |
+|  | [Production Network Formation, Trade, and Welfare](model_library/international_trade/production-network-formation-trade-welfare.md) | 跨国买卖双方链接形成、贸易与福利 |
+|  | [Buyer-Supplier Search and Matching](model_library/international_trade/buyer-supplier-search-matching.md) | 供应商搜寻、地理摩擦与链接形成 |
+|  | [Relational Trade](model_library/international_trade/relational-trade-and-relationship-capital.md) | 关系合约、关系资本、专用性与履约 |
+|  | [Supplier Switching](model_library/international_trade/supplier-switching-and-network-reconfiguration.md) | 供应商更换、沉没成本与网络重构 |
+|  | [Supply-Chain Resilience](model_library/international_trade/supply-chain-resilience-diversification.md) | 供应商多元化、韧性投资与中断风险 |
+|  | [Network GE and Welfare](model_library/international_trade/network-general-equilibrium-welfare.md) | 非线性网络传播、楔子与福利分解 |
+| 贸易政策 | [Trade-Policy Shocks](model_library/international_trade/trade-policy-shocks-quantitative-ge.md) | 关税及报复性关税的定量一般均衡效应 |
+|  | [Trade-Policy Uncertainty](model_library/international_trade/trade-policy-uncertainty.md) | 政策不确定性、不可逆进入与等待价值 |
+|  | [Tariff Pass-Through and Incidence](model_library/international_trade/tariff-pass-through-incidence.md) | 关税传导、定价和税负归宿 |
+|  | [Optimal Trade Policy](model_library/international_trade/comparative-advantage-optimal-trade-policy.md) | 比较优势下的最优关税、补贴与市场力量 |
+| 动态与空间贸易 | [Dynamic Export-Market Entry](model_library/international_trade/dynamic-export-market-entry.md) | 沉没出口成本、进入退出和动态参与 |
+|  | [Spatial Trade and Economic Geography](model_library/international_trade/spatial-trade-economic-geography.md) | 地理、市场可达性、空间均衡与迁移 |
+
+保留的根目录基准卡包括：[Ricardian](model_library/comparative-advantage-ricardian.md)、[Heckscher–Ohlin](model_library/heckscher-ohlin.md)、[Krugman](model_library/new-trade-theory-krugman.md)、[Melitz](model_library/melitz-firm-heterogeneity.md)、[Dynamic Spatial GE](model_library/dynamic-spatial-general-equilibrium.md) 和 [Trade–Labor Dynamics](model_library/trade-labor-dynamics-china-shock.md)。
 
 ---
 
@@ -671,6 +698,9 @@ pAI-Econ-claude/
 │   ├── melitz-firm-heterogeneity.md
 │   ├── dynamic-spatial-general-equilibrium.md    # Kleinman-Liu-Redding (2023)
 │   ├── trade-labor-dynamics-china-shock.md       # Caliendo-Dvorkin-Parro (2019)
+│   ├── international_trade/
+│   │   ├── INDEX.md                              # 25 张专题卡 + 6 张根目录卡的路由索引
+│   │   └── *.md                                  # 定量贸易、企业/GVC、生产网络、政策、动态/空间
 │   ├── io/
 │   │   ├── oligopoly-competition.md
 │   │   ├── entry-deterrence.md

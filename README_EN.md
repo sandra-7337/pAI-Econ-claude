@@ -429,12 +429,39 @@ This step is critical because theoretical economics research should not start fr
 
 ### International Trade Library
 
-| Model Family | Applicable Questions |
-|---|---|
-| Comparative Advantage / Ricardian | Comparative advantage, trade specialization, technology-driven trade patterns |
-| Heckscher-Ohlin | Factor endowments and trade patterns, Stolper-Samuelson, Rybczynski, factor price equalization |
-| New Trade Theory / Krugman (1980) | Intra-industry trade, economies of scale, variety gains, home market effect |
-| Melitz (2003) — Firm Heterogeneity | Firm heterogeneity, export thresholds, selection effect, productivity reallocation gains from trade |
+See [`model_library/international_trade/INDEX.md`](model_library/international_trade/INDEX.md) for the full routing index. The specialized library contains 25 cards and retains six root trade cards for compatibility and cross-reference.
+
+When a question involves international trade, trade policy, tariffs, global value chains, supply chains, firm-to-firm trade, buyer-seller matching, production networks, dynamic adjustment, spatial trade, or trade-related welfare analysis, Stage 3b must recursively scan this directory and jointly check the general Search, Matching, Dynamic Optimization, and General Equilibrium cards. The baseline and extensions must jointly state the mechanism, data requirements, and welfare-analysis path.
+
+| Group | Model Card | Applicable Questions |
+|---|---|---|
+| Foundations and quantitative trade | [Eaton–Kortum](model_library/international_trade/eaton-kortum-ricardian-gravity.md) | Multicountry Ricardian trade, technology, trade costs, and gravity |
+|  | [Armington / Structural Gravity](model_library/international_trade/armington-structural-gravity.md) | Origin differentiation, multilateral resistance, and structural gravity |
+|  | [ACR Welfare](model_library/international_trade/acr-welfare-sufficient-statistics.md) | Domestic expenditure shares, trade elasticities, and sufficient-statistic welfare |
+|  | [Caliendo–Parro](model_library/international_trade/caliendo-parro-multisector-trade.md) | Multisector input-output trade, tariff propagation, and counterfactuals |
+|  | [Quantitative Trade Counterfactuals](model_library/international_trade/quantitative-trade-counterfactuals.md) | Exact-hat algebra and disciplined counterfactual implementation |
+| Firms, sourcing, and global value chains | [EKK Firm-to-Firm Trade](model_library/international_trade/ekk-firm-to-firm-trade.md) | Importer-exporter matching and firm/labor-market effects |
+|  | [Multiproduct Firms](model_library/international_trade/multiproduct-firms-trade.md) | Product scope, core competence, and trade liberalization |
+|  | [Antràs–Helpman Global Sourcing](model_library/international_trade/antras-helpman-global-sourcing.md) | Heterogeneous firms, organizational boundaries, and incomplete contracts |
+|  | [Grossman–Helpman Outsourcing](model_library/international_trade/grossman-helpman-outsourcing.md) | Search, matching, and integration-versus-outsourcing choices |
+|  | [Antràs–Chor Global Value Chains](model_library/international_trade/antras-chor-global-value-chains.md) | Sequential production, contractibility, and stage allocation |
+| Production networks and supply chains | [Input-Output Production Networks](model_library/international_trade/input-output-production-networks.md) | Fixed input-output networks and shock propagation |
+|  | [Acemoglu–Azar Endogenous Networks](model_library/international_trade/acemoglu-azar-endogenous-production-networks.md) | Endogenous supplier sets and sectoral network adjustment |
+|  | [Oberfield Input-Output Architecture](model_library/international_trade/oberfield-input-output-architecture.md) | Firm supplier choice and endogenous industry structure |
+|  | [Production Network Formation, Trade, and Welfare](model_library/international_trade/production-network-formation-trade-welfare.md) | Cross-border buyer-seller link formation, trade, and welfare |
+|  | [Buyer-Supplier Search and Matching](model_library/international_trade/buyer-supplier-search-matching.md) | Supplier search, geographic frictions, and link formation |
+|  | [Relational Trade](model_library/international_trade/relational-trade-and-relationship-capital.md) | Relational contracts, relationship capital, specificity, and enforcement |
+|  | [Supplier Switching](model_library/international_trade/supplier-switching-and-network-reconfiguration.md) | Supplier replacement, sunk costs, and network reconfiguration |
+|  | [Supply-Chain Resilience](model_library/international_trade/supply-chain-resilience-diversification.md) | Supplier diversification, resilience investment, and disruption risk |
+|  | [Network GE and Welfare](model_library/international_trade/network-general-equilibrium-welfare.md) | Nonlinear network propagation, wedges, and welfare decomposition |
+| Trade policy | [Trade-Policy Shocks](model_library/international_trade/trade-policy-shocks-quantitative-ge.md) | Quantitative GE effects of tariffs and retaliation |
+|  | [Trade-Policy Uncertainty](model_library/international_trade/trade-policy-uncertainty.md) | Policy uncertainty, irreversible entry, and option value |
+|  | [Tariff Pass-Through and Incidence](model_library/international_trade/tariff-pass-through-incidence.md) | Tariff transmission, pricing, and economic incidence |
+|  | [Optimal Trade Policy](model_library/international_trade/comparative-advantage-optimal-trade-policy.md) | Optimal tariffs, subsidies, and market power under comparative advantage |
+| Dynamic and spatial trade | [Dynamic Export-Market Entry](model_library/international_trade/dynamic-export-market-entry.md) | Sunk export costs, entry/exit, and dynamic participation |
+|  | [Spatial Trade and Economic Geography](model_library/international_trade/spatial-trade-economic-geography.md) | Geography, market access, spatial equilibrium, and migration |
+
+Retained root baselines are [Ricardian](model_library/comparative-advantage-ricardian.md), [Heckscher–Ohlin](model_library/heckscher-ohlin.md), [Krugman](model_library/new-trade-theory-krugman.md), [Melitz](model_library/melitz-firm-heterogeneity.md), [Dynamic Spatial GE](model_library/dynamic-spatial-general-equilibrium.md), and [Trade–Labor Dynamics](model_library/trade-labor-dynamics-china-shock.md).
 
 ---
 
@@ -670,6 +697,9 @@ pAI-Econ-claude/
 │   ├── melitz-firm-heterogeneity.md
 │   ├── dynamic-spatial-general-equilibrium.md    # Kleinman-Liu-Redding (2023)
 │   ├── trade-labor-dynamics-china-shock.md       # Caliendo-Dvorkin-Parro (2019)
+│   ├── international_trade/
+│   │   ├── INDEX.md                              # Routing index for 25 specialized + 6 root cards
+│   │   └── *.md                                  # Quantitative trade, firms/GVCs, networks, policy, dynamics/space
 │   ├── io/
 │   │   ├── oligopoly-competition.md
 │   │   ├── entry-deterrence.md

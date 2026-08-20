@@ -7,7 +7,7 @@ Before building Model Primitives, this stage compares the research idea against 
 - `outputs/research_puzzle.md` — refined research question with central tension, mechanism, and scope
 - `outputs/literature_positioning.md` — literature map identifying which model traditions the paper will engage with
 - `outputs/persona_council.md` — five-persona verdict that clarifies the most promising theoretical direction
-- All files in `model_library/` — the canonical model pattern library
+- All model-card Markdown files under `model_library/`, recursively. Exclude routing or documentation files named `INDEX.md` or `README.md`.
 
 ## Output
 - Write to: `outputs/canonical_model_match.md`
@@ -25,7 +25,7 @@ Extract:
 5. The type of result sought (existence, characterization, comparative statics, welfare, implementation)
 
 ### Step 2 — Screen All Model Families
-For each model family in `model_library/` (general models) and `model_library/human_capital_and_labor/` (if the research involves human capital, labor, education, or technology-labor interaction), ask:
+For each model family under `model_library/` (including specialized subdirectories), ask:
 
 > Does this research question fit under this model family's "Canonical Economic Question" or "When to Use This Model" conditions?
 
@@ -35,6 +35,21 @@ Score each family as:
 - **LOW FIT / NOT APPLICABLE**: the research has no significant overlap with this family
 
 Retain all HIGH and MODERATE FIT families for the candidate list.
+
+#### Mandatory International-Trade Cross-Library Routing
+
+If the research involves **international trade, trade policy, tariffs, global value chains, supply chains, firm-to-firm trade, buyer-seller matching, production networks, dynamic adjustment, spatial trade, or trade-related welfare analysis**, Stage 3b MUST:
+
+1. Recursively scan every model card under `model_library/international_trade/`. Use `INDEX.md` only to route the scan; never score it as a model family.
+2. Check the retained root trade cards identified in `model_library/international_trade/INDEX.md`.
+3. Jointly check the following general model cards rather than treating the trade library as self-contained:
+   - `model_library/search-models.md` for costly supplier discovery, reservation rules, and search intensity;
+   - `model_library/matching-models.md` for partner selection, rematching, match surplus, or stability, while explaining when centralized stable matching is not the appropriate concept;
+   - `model_library/dynamic-optimization-bellman.md` for inherited relationships, switching costs, transition paths, or other intertemporal state variables;
+   - `model_library/general-equilibrium-basics.md` for market clearing, price and wage feedback, aggregate output, and welfare incidence.
+4. Record the scan in a **Required Library Scan Record** that names the trade-specific and general cards considered and explains any listed general card judged not applicable.
+
+The scan record is mandatory even when the recommended baseline is a trade-specific card. A keyword match alone is not sufficient: the selected baseline and extensions must be justified by agents, states, frictions, timing, equilibrium concept, data needs, and welfare object.
 
 ### Step 3 — Identify 2–4 Candidate Families
 From the retained families, select 2–4 candidates that best match the research puzzle. For each candidate, provide:
@@ -53,6 +68,9 @@ Select ONE family as the recommended baseline. Provide:
 - **Canonical baseline setup**: List the standard primitives, timing, and equilibrium concept from this family that should be adopted as the starting point for Model Primitives (Stage 4)
 - **Inheritance list**: What specific primitives, constraints, and solution concepts the research should inherit from the canonical baseline (these will be handed to Stage 4)
 - **What must be added or modified**: The one or two features of the research that are not in the canonical model and must be introduced as new elements
+- **Core mechanism**: State the causal chain the baseline is intended to discipline
+- **Required data**: State the minimum data needed to identify, estimate, or calibrate the baseline
+- **Welfare analysis path**: Define the welfare object, transfers versus real resource costs, and the equilibrium comparisons required
 
 ### Step 5 — Recommend Extensions
 List 1–2 model families that could serve as **extensions** to the baseline, after the core baseline model is established:
@@ -112,12 +130,13 @@ Confirmed NOT a superficial relabeling: [yes/no — if yes, explain]
 
 Write `outputs/canonical_model_match.md` with these sections:
 1. Research puzzle summary (2-3 sentences)
-2. Candidate families (2-4 entries with fit rationale)
-3. Recommended baseline (with inheritance list and handoff)
-4. Recommended extensions (1-2 entries)
-5. Excluded families (one-line rationale each)
-6. Relabeling check (explicit yes/no with justification)
-7. Primitives inheritance handoff block (structured as above)
+2. Required Library Scan Record (mandatory for any activated specialized-library route)
+3. Candidate families (2-4 entries with fit rationale)
+4. Recommended baseline (with inheritance list, core mechanism, required data, welfare path, and handoff)
+5. Recommended extensions (1-2 entries)
+6. Excluded families (one-line rationale each)
+7. Relabeling check (explicit yes/no with justification)
+8. Primitives inheritance handoff block (structured as above)
 
 ---
 
@@ -127,3 +146,5 @@ Write `outputs/canonical_model_match.md` with these sections:
 - The handoff block must be specific enough that Stage 4 can begin building primitives without re-reading all prior outputs
 - If the research puzzle does not fit any canonical family well (HIGH or MODERATE), say so explicitly and flag this for the researcher (it may mean the research is either highly novel or not well-specified)
 - If the research involves human capital, labor, education, automation, or AI-labor interaction, always check `model_library/human_capital_and_labor/` in addition to the general library
+- Apply the Mandatory International-Trade Cross-Library Routing rule whenever any of its listed triggers is present; this includes the required checks of `search-models.md`, `matching-models.md`, `dynamic-optimization-bellman.md`, and `general-equilibrium-basics.md`
+- Never score `INDEX.md` or `README.md` as a model family

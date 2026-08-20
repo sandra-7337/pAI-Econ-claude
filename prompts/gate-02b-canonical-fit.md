@@ -32,6 +32,8 @@ Human capital / labor check: if the research involves any of the following topic
 - Automation / AI / labor market → check Task-Based Production (Acemoglu-Restrepo), Automation-Displacement-Reinstatement, Human Capital Adaptation, Directed Technical Change / SBTC
 - Occupational sorting → check Roy, Occupational Choice and Comparative Advantage
 
+International trade / production-network check: if the research involves international trade, trade policy, tariffs, global value chains, supply chains, firm-to-firm trade, buyer-seller matching, production networks, dynamic adjustment, spatial trade, or trade-related welfare analysis, verify that relevant families under `model_library/international_trade/` and the retained root trade cards were considered. Use `model_library/international_trade/INDEX.md` only for routing; do not treat the index itself as a model family. The full cross-library audit is Check 6 below.
+
 **FAIL if:** a family with HIGH fit is completely absent from the document with no mention or exclusion rationale.
 
 ---
@@ -89,9 +91,28 @@ Procedure:
 
 ---
 
+### Check 6 — International Trade Cross-Library Routing (Conditional)
+**Question:** If an international-trade routing trigger is present, did Stage 3b scan the specialized trade library together with the relevant general models and produce a usable mechanism-data-welfare handoff?
+
+Procedure:
+- Activate this check if the research involves any of: international trade, trade policy, tariffs, global value chains, supply chains, firm-to-firm trade, buyer-seller matching, production networks, dynamic adjustment, spatial trade, or trade-related welfare analysis.
+- Verify that the Required Library Scan Record documents a recursive scan of `model_library/international_trade/` and consideration of the retained root trade cards in its `INDEX.md`.
+- Verify that the record considers all four general cards below and either uses each one or gives a question-specific reason it is not applicable:
+  - `model_library/search-models.md`
+  - `model_library/matching-models.md`
+  - `model_library/dynamic-optimization-bellman.md`
+  - `model_library/general-equilibrium-basics.md`
+- Verify that the recommended baseline and extensions identify the core mechanism, minimum required data, and welfare-analysis path.
+- Verify that `INDEX.md` is not scored as a model family and that a generic matching card is not substituted mechanically for a trade-specific relationship-formation model.
+
+**FAIL if:** the check is active and the specialized directory, retained root trade cards, any of the four general cards, or the mechanism-data-welfare handoff is omitted without explanation.
+**NOT APPLICABLE if:** none of the listed triggers is present.
+
+---
+
 ## Gate Verdict
 
-**PASS:** All 5 checks are PASS or NOT APPLICABLE; at most 1 WARNING.
+**PASS:** All 6 checks are PASS or NOT APPLICABLE; at most 1 WARNING.
 
 **CONDITIONAL PASS (proceed with caveat):** 2 or more WARNINGs but no FAILs. Append a `⚠️ CAVEAT:` block to `canonical_model_match.md` documenting the warnings. Proceed to Stage 4.
 
@@ -118,7 +139,7 @@ To loop back and correct: LOOP BACK TO STAGE 3b
 
 Write `gates/gate-02b-canonical-fit.md` with:
 - Date and stage identifier
-- Check-by-check results (verdict + one-line reason for each of the 5 checks)
+- Check-by-check results (verdict + one-line reason for each of the 6 checks)
 - Overall gate verdict (PASS / CONDITIONAL PASS / FAIL)
 - If FAIL: failure report with recommended action
 - If PASS: one-sentence confirmation that Stage 4 may proceed with the recommended baseline
